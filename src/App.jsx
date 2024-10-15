@@ -17,8 +17,6 @@ function App() {
 
       {<SidebarMenu/>}
 
-
-      
       <Routes>
         <Route path='/' element={<UserModification />} />
       </Routes>

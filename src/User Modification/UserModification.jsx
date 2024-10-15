@@ -129,7 +129,7 @@ const UserModification = () => {
 
         console.log(filedata)
 
-        if((formData.contactNumber.length!=0)&&(formData.contactNumber.length<12)){
+        if((formData.contactNumber.length!=0)&&(formData.contactNumber.length<10)){
           toast.warn("The contact number length is invalid",{
             closeOnClick:true,
             className:"my-toast-warning"
@@ -137,7 +137,7 @@ const UserModification = () => {
         }else {
 
           if(formData.command=="Add"){
-            toast.success("Add request, Successfully Saved", {
+            toast.success("Successfully Saved", {
               position: "top-right",
               autoClose: 3000, // Auto close after 3 seconds
               hideProgressBar: false,
@@ -149,7 +149,7 @@ const UserModification = () => {
           }
   
           if(formData.command=="Update"){
-            toast.success("Update request, Successfully Saved", {
+            toast.success("Details Update Request, Successfully Saved", {
               position: "top-right",
               autoClose: 3000, // Auto close after 3 seconds
               hideProgressBar: false,
@@ -161,7 +161,7 @@ const UserModification = () => {
           }
 
           if(formData.command=="Delete"){
-            toast.success("Delete request, Successfully Saved", {
+            toast.success("Details Delete request, Successfully Saved", {
               position: "top-right",
               autoClose: 3000, // Auto close after 3 seconds
               hideProgressBar: false,
