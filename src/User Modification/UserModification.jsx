@@ -106,6 +106,7 @@ const UserModification = () => {
         return () => clearInterval(intervalId);
     }, []);
 
+
     // Handle form submission
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -172,7 +173,25 @@ const UserModification = () => {
           });
           }
         
-        }
+      const fileName = `${fileHeader}.txt`
+      const formDataString = filedata;
+
+      // Create a Blob object with the form data string
+      const fileBlob = new Blob([formDataString], { type: "text/plain" });
+
+      // Create a download link for the file
+      const downloadLink = document.createElement("a");
+      downloadLink.href = URL.createObjectURL(fileBlob);
+      downloadLink.download = fileName;
+
+      // Append the link to the document and trigger the download
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+
+      // Clean up
+      document.body.removeChild(downloadLink);
+
+    }
 
         // Reset form data after submission (including resetting formSavedTime)
         setFormData({
