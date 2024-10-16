@@ -6,7 +6,7 @@
   top: 0;
   left: 0;
   z-index: 10;
-  background: linear-gradient(135deg, rgba(3, 157, 246, 0.778), rgb(246, 246, 246));
+  background: linear-gradient(135deg, rgba(62, 182, 252, 0.999), rgb(214, 241, 243));
   background-color: rgb(246, 246, 246);
   padding: 2%;
 
@@ -74,8 +74,8 @@
   color: #333;
   cursor: pointer;
   border-radius: 8px;
-  margin-bottom: 10px;
   transition: background-color 0.3s ease;
+  transition: 0.5s;
 }
 
 .menu-item:hover {
@@ -85,6 +85,7 @@
 .menu-text {
   margin-left: 10px;
   font-size: 1em;
+  padding-bottom: 5px;
 }
 
 .menu-icon img {
@@ -100,6 +101,17 @@
   z-index: 100;
   cursor: pointer;
 }
+
+.menu-item.open{
+  border: #333;
+  border-style: solid;
+  border-width: 1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom: none;
+  border-color: rgb(0, 162, 255);
+}
+
 
 /* Mobile view adjustments */
 @media (max-width: 860px) {
@@ -119,5 +131,9 @@
     position: absolute;
     left: 3%;
     top: 2%;
+  }
+
+  .menu-item:hover{
+    background: inherit;
   }
 }
