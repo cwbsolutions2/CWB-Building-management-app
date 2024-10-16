@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react';
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState, useRef, useEffect } from 'react';
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import './SidebarMenu.css';
 import homeIcon from './Images/home_app_logo.svg';
 import adminIcon from './Images/account_circle.svg';
@@ -11,10 +11,11 @@ import Dropdown from './Dropdown/Dropdown';
 
 const SidebarMenu = () => {
   const navigate = useNavigate(); // Initialize useNavigate
+  const location = useLocation(); // Initialize useLocation
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState({
-    hardwareManagement:(false),
-    driverVehicle:(false)
+    hardwareManagement: false,
+    driverVehicle: false
   });
 
   const touchStartX = useRef(0);
@@ -27,11 +28,8 @@ const SidebarMenu = () => {
     }));
   };
 
-  
-
   // Toggle sidebar visibility
   const toggleSidebar = () => {
-
     if (isDropdownOpen) {
       setIsDropdownOpen(false); // Close dropdown if it's open
     }
@@ -53,7 +51,12 @@ const SidebarMenu = () => {
     }
   };
 
+  // Close sidebar on route change
+  useEffect(() => {
+    setIsSidebarOpen(false); // Close sidebar when location changes
+  }, [location]);
 
+  // Handle navigation for dropdown items
   const handleItemClick = (item) => {
     switch (item) {
       case 'Add Gate':
@@ -73,7 +76,7 @@ const SidebarMenu = () => {
   return (
     <div>
       {/* Mobile menu icon to toggle the sidebar */}
-      <div className="mobile-menu-icon" >
+      <div className="mobile-menu-icon">
         <img onClick={toggleSidebar} className="menuIcon" src={menuIcon} alt="Menu Icon" style={{ width: '30px' }} />
       </div>
 
@@ -87,37 +90,33 @@ const SidebarMenu = () => {
           <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="Logo" className="logo" />
         </div>
         <ul className="sidebar-menu">
-          <li className="menu-item" >
+          <li className="menu-item">
             <span className="menu-icon"><img src={homeIcon} alt="Home Icon" /></span>
-            <span className="menu-text"><Link to='/home' >Home</Link></span>
+            <span className="menu-text"><Link to='/home'>Home</Link></span>
           </li>
 
-          
           <li className={`menu-item ${isDropdownOpen.driverVehicle ? 'open' : ''}`} onClick={() => toggleDropdown('driverVehicle')}>
             <span className="menu-icon"><img src={vehicleIcon} alt="Vehicle Icon" /></span>
             <span className="menu-text">Driver/Vehicle</span>
           </li>
 
-          {isDropdownOpen.driverVehicle&&(
-            <Dropdown dropdownItems={['Vehicle Details']} isOpen={isDropdownOpen.driverVehicle} toggleDropDown={() => toggleDropdown('driverVehicle')} handleItemClick={handleItemClick}/>
+          {isDropdownOpen.driverVehicle && (
+            <Dropdown dropdownItems={['Vehicle Details']} isOpen={isDropdownOpen.driverVehicle} toggleDropDown={() => toggleDropdown('driverVehicle')} handleItemClick={handleItemClick} />
           )}
-
 
           <li className="menu-item">
             <span className="menu-icon"><img src={adminIcon} alt="Admin Icon" /></span>
             <span className="menu-text">Administrators</span>
           </li>
 
-
           <li className={`menu-item ${isDropdownOpen.hardwareManagement ? 'open' : ''}`} onClick={() => toggleDropdown('hardwareManagement')}>
             <span className="menu-icon"><img src={hardwareManagementIcon} alt="Hardware Management Icon" /></span>
             <span className="menu-text">Hardware Management</span>
           </li>
 
-            {isDropdownOpen.hardwareManagement && ( // Render the Dropdown based on the state
-              <Dropdown dropdownItems={['Add Gate', 'Add Location',]} isOpen={isDropdownOpen.hardwareManagement} toggleDropDown={()=>toggleDropdown('hardwareManagement')} />
-            )}
-
+          {isDropdownOpen.hardwareManagement && (
+            <Dropdown dropdownItems={['Add Gate', 'Add Location']} isOpen={isDropdownOpen.hardwareManagement} toggleDropDown={() => toggleDropdown('hardwareManagement')} handleItemClick={handleItemClick} />
+          )}
 
           <li className="menu-item">
             <span className="menu-icon"><img src={testAdminIcon} alt="Test Admin Icon" /></span>
