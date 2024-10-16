@@ -185,7 +185,7 @@ const UserModification = () => {
       downloadLink.download = fileName;
 
       // Append the link to the document and trigger the download
-      document.body.appendChild(downloadLink);
+      document.body.appendChild(downloadLink);  
       downloadLink.click();
 
       // Clean up

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import UserModification from './User Modification/UserModification';
 import SidebarMenu from './SidebarMenu/SidebarMenu';
 import Home from './Home/Home';
+import GateManagement from './GateManagement/GateManagement';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/CWB-Parking-Application" element={<Navigate to="/home" />} /> 
         <Route path="/home" element={<Home/>}/>
         <Route path="/userModification" element={<UserModification />} />
+        <Route path="/gateManagement" element={<GateManagement/>}/>
       </Routes>
     </Router>
   );

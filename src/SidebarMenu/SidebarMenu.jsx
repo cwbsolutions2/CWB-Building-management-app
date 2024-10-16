@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import 'react-datepicker/dist/react-datepicker.css';
 import './SidebarMenu.css';
 import homeIcon from './Images/home_app_logo.svg';
 import adminIcon from './Images/account_circle.svg';
@@ -59,10 +60,10 @@ const SidebarMenu = () => {
   // Handle navigation for dropdown items
   const handleItemClick = (item) => {
     switch (item) {
-      case 'Add Gate':
-        navigate('/add-gate');
+      case 'Gate Management':
+        navigate('/gateManagement');
         break;
-      case 'Add Location':
+      case 'Location Management':
         navigate('/add-location');
         break;
       case 'Vehicle Details':
@@ -115,7 +116,7 @@ const SidebarMenu = () => {
           </li>
 
           {isDropdownOpen.hardwareManagement && (
-            <Dropdown dropdownItems={['Add Gate', 'Add Location']} isOpen={isDropdownOpen.hardwareManagement} toggleDropDown={() => toggleDropdown('hardwareManagement')} handleItemClick={handleItemClick} />
+            <Dropdown dropdownItems={['Gate Management', 'Location Management']} isOpen={isDropdownOpen.hardwareManagement} toggleDropDown={() => toggleDropdown('hardwareManagement')} handleItemClick={handleItemClick} />
           )}
 
           <li className="menu-item">
@@ -124,6 +125,7 @@ const SidebarMenu = () => {
           </li>
         </ul>
       </div>
+      
     </div>
   );
 };
