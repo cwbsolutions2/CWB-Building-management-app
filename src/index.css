@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(0, 0, 0, 0.87);
-  background-color: #eaf7fb;
+  background:linear-gradient(225deg, rgb(182, 212, 240),rgb(222, 234, 248));
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
