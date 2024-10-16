@@ -1,0 +1,15 @@
+.dropdown{
+    display: block;
+    justify-content: center;
+    background-color: aqua;
+    height: 100px;
+    width: 300px;
+}
+
+.dropdown-header{
+    background-color: beige;
+}
+
+.dropdown-middle{
+    background-color: rgb(130, 93, 37);
+}

@@ -1,27 +1,55 @@
+/* Sidebar Styling */
 .sidebar {
   width: 250px;
   height: 100vh;
-  background-color: solid;
-  padding: 20px;
   position: fixed;
   top: 0;
   left: 0;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-  transform: translateX(-100%); /* Initially hidden on mobile */
-  transition: transform 1s ease-in-out; /* Smooth transition */
-  z-index: 10; /* Ensure it's on top */
-  background: linear-gradient(135deg, rgba(3, 157, 246, 0.778),rgb(246, 246, 246));
-  background-color: aquamarine;
+  z-index: 10;
+  background: linear-gradient(135deg, rgba(3, 157, 246, 0.778), rgb(246, 246, 246));
+  background-color: rgb(246, 246, 246);
+  padding: 2%;
+
 }
 
-.sidebar.open {
-  transform: translateX(0); /* Show the sidebar when open */
+/* Sidebar open state */
+.sidebar.open-sidebar {
+  transform: translateX(0); /* Slide in */
+  opacity: 1; /* Fade in */
+  animation: slideIn 0.5s forwards; /* Keyframe animation for opening */
 }
 
-.sidebar.hidden {
-  transform: translateX(-100%); /* Hide the sidebar */
+/* Sidebar hidden state */
+.sidebar.hidden-sidebar {
+  transform: translateX(-100%); /* Slide out */
+  opacity: 0; /* Fade out */
+  animation: slideOut 0.5s backwards; /* Keyframe animation for closing */
 }
 
+/* Keyframe animations */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+/* Sidebar Logo and Menu Styling */
 .sidebar-logo {
   text-align: center;
   margin-bottom: 20px;
@@ -48,48 +76,48 @@
   border-radius: 8px;
   margin-bottom: 10px;
   transition: background-color 0.3s ease;
-
 }
 
 .menu-item:hover {
   background-color: #d9e9ff;
 }
 
-.menu-text{
-  margin-left: 5px;
+.menu-text {
+  margin-left: 10px;
+  font-size: 1em;
 }
 
-.menuIcon {
+.menu-icon img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Mobile menu icon */
+.mobile-menu-icon {
   position: fixed;
   left: 1%;
   top: 2%;
   z-index: 100;
-}
-
-.menu-text {
-  font-size: 1em;
-  margin-bottom: 5px;
-}
-
-.menu-item.active {
-  background-color: #007bff;
-  color: white;
+  cursor: pointer;
 }
 
 /* Mobile view adjustments */
 @media (max-width: 860px) {
   .sidebar {
-    transform: translateX(-100%); /* Initially hidden on small screens */
+    transform: translateX(-100%); /* Initially hidden */
   }
 
   .sidebar.open {
-    transform: translateX(0); /* Slide in the sidebar when the 'open' class is added */
+    transform: translateX(0); /* Slide in when open */
   }
 
-  .menuIcon {
+  .sidebar.hidden {
+    transform: translateX(-100%); /* Slide out when hidden */
+  }
+
+  .mobile-menu-icon {
     position: absolute;
     left: 3%;
     top: 2%;
-    z-index: 100;
   }
 }
