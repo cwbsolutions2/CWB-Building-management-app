@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
-import './SidebarMenu.css'; // Import the CSS file
+import { Link, useNavigate } from "react-router-dom";
+import './SidebarMenu.css';
 import homeIcon from './Images/home_app_logo.svg';
 import adminIcon from './Images/account_circle.svg';
 import testAdminIcon from './Images/shield_person.svg';
@@ -9,6 +10,7 @@ import menuIcon from '../../public/menu.svg';
 import Dropdown from './Dropdown/Dropdown';
 
 const SidebarMenu = () => {
+  const navigate = useNavigate(); // Initialize useNavigate
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState({
     hardwareManagement:(false),
@@ -51,6 +53,23 @@ const SidebarMenu = () => {
     }
   };
 
+
+  const handleItemClick = (item) => {
+    switch (item) {
+      case 'Add Gate':
+        navigate('/add-gate');
+        break;
+      case 'Add Location':
+        navigate('/add-location');
+        break;
+      case 'Vehicle Details':
+        navigate('/userModification');
+        break;
+      default:
+        break;
+    }
+  };
+
   return (
     <div>
       {/* Mobile menu icon to toggle the sidebar */}
@@ -68,9 +87,9 @@ const SidebarMenu = () => {
           <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="Logo" className="logo" />
         </div>
         <ul className="sidebar-menu">
-          <li className="menu-item">
+          <li className="menu-item" >
             <span className="menu-icon"><img src={homeIcon} alt="Home Icon" /></span>
-            <span className="menu-text">Home</span>
+            <span className="menu-text"><Link to='/home' >Home</Link></span>
           </li>
 
           
@@ -80,7 +99,7 @@ const SidebarMenu = () => {
           </li>
 
           {isDropdownOpen.driverVehicle&&(
-            <Dropdown dropdownItems={['Vehicle Details']} isOpen={isDropdownOpen.driverVehicle} toggleDropDown={() => toggleDropdown('driverVehicle')}/>
+            <Dropdown dropdownItems={['Vehicle Details']} isOpen={isDropdownOpen.driverVehicle} toggleDropDown={() => toggleDropdown('driverVehicle')} handleItemClick={handleItemClick}/>
           )}
 
 

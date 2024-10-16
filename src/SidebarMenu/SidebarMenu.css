@@ -82,6 +82,10 @@
   background-color: #d9e9ff;
 }
 
+.menu-text a{
+  text-decoration: none;
+  color: black;
+}
 .menu-text {
   margin-left: 10px;
   font-size: 1em;

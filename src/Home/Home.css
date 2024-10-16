@@ -1,0 +1,42 @@
+.homePageContainer {
+    padding-top: 20%;
+    font-size: 4em;
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+
+.textGradient {
+    background: linear-gradient(135deg, rgb(10, 128, 238), rgb(255, 69, 212)); /* Add more colors as needed */
+    -webkit-background-clip: text; /* Clip the background to the text */
+    background-clip: text; /* Standard property */
+    color: transparent; /* Make the text transparent */
+    animation: moveGradient 3s linear infinite; /* Longer animation for smoother effect */
+    background-size: 200% 200%; /* Increase background size for movement */
+}
+
+/* Keyframes for moving the gradient */
+@keyframes moveGradient {
+    0% {
+        background-position: 0% 50%; /* Start position */
+    }
+    25% {
+        background-position: 50% 50%; /* Midway position */
+    }
+    100% {
+        background-position: 100% 50%; /* End position */
+    }
+    75% {
+        background-position: 50% 50%; /* Hold midway before returning */
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 865px) {
+    .homePageContainer {
+        padding-top: 50%;
+        padding-bottom: 50%;
+        font-size: 2.5em;
+        letter-spacing: 1px;
+        font-weight: 400;
+    }
+}
