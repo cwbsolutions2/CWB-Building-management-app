@@ -284,14 +284,15 @@ const UserModification = () => {
                 required
             />
 
-            <label htmlFor="lprNumber">LPR Number</label>
+            <label htmlFor="lprNumber">IU/LPR Number</label>
             <input
                 type="text"
                 id="lprNumber"
                 name="lprNumber"
                 value={formData.lprNumber}
                 onChange={handleInputChange}
-                placeholder="Enter LPR Number"
+                placeholder="Enter IU/LPR Number with 10 Characters"
+                maxLength={10}
                 required
             />
 
