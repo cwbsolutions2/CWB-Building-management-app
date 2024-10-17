@@ -109,7 +109,7 @@ function AddGateForm (){
             id='lcdMessage'
             value={addGateFormData.lcdMessage}
             onChange={handleAddGateInputChange}
-            placeholder='Enter message to displayed on Screen'
+            placeholder='Enter Message to Display on Screen'
             />
 
             <label htmlFor="gateType">Select Type</label>
