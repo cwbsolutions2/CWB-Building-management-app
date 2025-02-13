@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.login-signup-box{
+    margin-top: 5%;
+}
+
+.sign-up-prompt-container .login-signup-box h2{
+    font-size: 2em;
+}
+
+
+.sign-up-prompt-container #title, #country{
+    width: 100%;
+    border: 2px solid #F5C022;
+    height: 3em;
+    outline: none;
+    background: black;
+    color: white;
+    border-radius: 5px;
+}

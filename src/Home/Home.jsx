@@ -2,6 +2,7 @@ import './Home.css'
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import backdropLandingPage from '../assets/Backdrops/Landing page backdrop.jpeg'
 import cwbLogo from '../assets/CWB Logo.png'
+import { Link } from "react-router-dom";
 
 
 
@@ -16,19 +17,19 @@ const Home =() =>{
                         <img src={cwbLogo} alt=""  className='logo'/>
                         <h2>Welcome to your building</h2>
                         <h2> management system!</h2>
-                        <h1>PARKING</h1>
+                        <h1>Parking</h1>
 
                         <form>
                             <label for="username">Username</label>
-                            <div class="input-field">
+                            <div className="input-field">
                                 <input type="text" id="username" name="username" placeholder='Enter your email'/>
-                                <i class="far fa-user custom-icon-user"></i>
+                                <i classname="far fa-user custom-icon-user"></i>
                             </div>
 
                             <label for="password">Password</label>
                             <div class="input-field">
                                 <input type="password" id="password" name="password" placeholder='Enter your password'/>
-                                <i class="fas fa-lock custom-icon-lock"></i>
+                                <i classname="fas fa-lock custom-icon-lock"></i>
                             </div>
 
                             <div class="options">
@@ -40,7 +41,8 @@ const Home =() =>{
                             </div>
 
                             <button type="submit" class="login-btn">Login</button>
-                            <p class="register">Don't have an account? <a href="#">Register</a></p>
+                            <p className="register">Don't have an account? <Link to={"/signup"}>Register</Link></p>
+                            
                         </form>
                     </div>
                 </div>

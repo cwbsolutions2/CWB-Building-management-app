@@ -4,6 +4,8 @@ import SidebarMenu from './SidebarMenu/SidebarMenu';
 import Home from './Home/Home';
 import GateManagement from './GateManagement/GateManagement';
 import LocationManagement from './LocationManagement/Location';
+import SignUP from "./Home/Signup";
+import { Link } from "react-router-dom";
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
         <Route path="/userModification" element={<UserModification />} />
         <Route path="/gateManagement" element={<GateManagement />} />
         <Route path="/locationManagement" element={<LocationManagement />} />
+        <Route path="/signup" element={<SignUP/>} />
       </Routes>
     </Router>
   );
