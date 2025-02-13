@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "homepage": "https://github.com/Thamaruj/CWB-Building-Management-App.git",
+    "homepage": "https://github.com/cwbsolutions2/CWB-Building-management-app.git",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {

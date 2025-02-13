@@ -87,12 +87,10 @@ const SidebarMenu = () => {
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
       >
-        <div className="sidebar-logo">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="Logo" className="logo" />
-        </div>
+
         <ul className="sidebar-menu">
-          <li className="menu-item">
-            <span className="menu-icon"><img src={homeIcon} alt="Home Icon" /></span>
+          <li className="menu-item" >
+            <span className="menu-icon"><Link to='/home'><img  src={homeIcon} alt="Home Icon" /></Link></span>
             <span className="menu-text"><Link to='/home'>Home</Link></span>
           </li>
 
