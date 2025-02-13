@@ -8,7 +8,7 @@ function GateManagement (){
 
   const handleGateToggle = (formType) =>{
     setIsAddGate(formType==='add')
-    console.log("Clicked")
+
   }    
 
 
@@ -16,8 +16,10 @@ function GateManagement (){
   return(
     <div className='gate-management-form-container'>
 
+          <p>Gate Management</p>
 
         <div className='gate-management-form-upper-section' >
+            
           <button
           onClick={()=>handleGateToggle('add')}
           className={isAddGate? 'active-button':'inactive-button'}>
@@ -63,9 +65,9 @@ function AddGateForm (){
     e.preventDefault();
     console.log('Form submitted:', addGateFormData);
     // Add your save logic here
-    toast.success("New Gates Details Saved Successfully"),{
+    toast.success("New Gates Details Saved Successfully",{
       closeOnClick:true
-    }
+    })
 
     setAddGateFormData({
       gateName:'',
@@ -200,7 +202,7 @@ function DeleteGateForm () {
             id='lcdMessage'
             value={deleteGateFormData.lcdMessage}
             onChange={handleDeleteGateInputChange}
-            placeholder='Enter message to displayed on Screen'
+            placeholder='Enter Message to Display on Screen'
             required
             />
 

@@ -64,7 +64,7 @@ const SidebarMenu = () => {
         navigate('/gateManagement');
         break;
       case 'Location Management':
-        navigate('/add-location');
+        navigate('/locationManagement');
         break;
       case 'Vehicle Details':
         navigate('/userModification');

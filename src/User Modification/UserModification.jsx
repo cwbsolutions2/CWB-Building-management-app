@@ -140,7 +140,7 @@ const UserModification = () => {
           if(formData.command=="Add"){
             toast.success("Successfully Saved", {
               position: "top-right",
-              autoClose: 3000, // Auto close after 3 seconds
+              autoClose: 4500, // Auto close after 3 seconds
               hideProgressBar: false,
               pauseOnHover: true,
               draggable: false,
@@ -152,7 +152,7 @@ const UserModification = () => {
           if(formData.command=="Update"){
             toast.success("Details Update Request, Successfully Saved", {
               position: "top-right",
-              autoClose: 3000, // Auto close after 3 seconds
+              autoClose: 4500, // Auto close after 3 seconds
               hideProgressBar: false,
               pauseOnHover: true,
               draggable: false,
@@ -164,7 +164,7 @@ const UserModification = () => {
           if(formData.command=="Delete"){
             toast.success("Details Delete request, Successfully Saved", {
               position: "top-right",
-              autoClose: 3000, // Auto close after 3 seconds
+              autoClose: 4500, // Auto close after 3 seconds
               hideProgressBar: false,
               pauseOnHover: true,
               draggable: false,
@@ -384,7 +384,7 @@ const UserModification = () => {
               id="formSavedTime"
               value={formData.formSavedTime}
               readOnly
-              className="hidden"
+              className="user-modification-form-saved-time"
             />
 
             <button type="submit">Save</button>

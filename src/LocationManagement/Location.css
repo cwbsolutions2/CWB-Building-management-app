@@ -1,0 +1,39 @@
+.add-or-delete-location-management-form-container .remaining-characters-in-text-area-in-location-management {
+    font-size: 10px;
+    text-align: left;
+}
+
+.add-or-delete-location-management-form-container label{
+    display: block;
+    text-align: left;
+    margin-left: 2px;
+}
+
+.add-or-delete-location-management-form-container input,
+.add-or-delete-location-management-form-container select,
+.add-or-delete-location-management-form-container textarea{
+    height: 35px;
+    width: 100%;
+    border-radius: 3px;
+    color: rgb(0, 0, 0);
+    background-color: rgba(232, 228, 228, 0.585);
+    border: none;
+    margin-bottom: 8px;
+    display: block;
+}
+
+
+.add-or-delete-location-management-form-container input:focus,
+.add-or-delete-location-management-form-container select:focus,
+.add-or-delete-location-management-form-container textarea:focus{
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.add-or-delete-location-management-form-container textarea{
+    max-width: 100%;
+    max-height: 50px;
+    min-width: 50%;
+
+}

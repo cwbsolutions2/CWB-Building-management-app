@@ -32,17 +32,20 @@
 }
 
 
-.form-container label,input,select{
+.form-container label,
+.form-container select{
     display: block;
     width: 100%;
 }
+
 .form-container label{
     text-align: left;
     margin-left: 2px;
     font-weight: 500;
 }
 
-.form-container input,select{
+.form-container input,
+.form-container select{
     height: 35px;
     width: 70em;
     border-radius: 3px;
@@ -53,9 +56,8 @@
     max-width: 70em;
 }
 
-.form-container 
-input:focus,
-select:focus{
+.form-container input:focus,
+.form-container select:focus{
     border-color: #007bff;
     outline: none;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
@@ -74,7 +76,7 @@ select:focus{
     font-size: 1.1em;
 }
 
-.hidden{
+.user-modification-form-saved-time{
     display: none;
 }
 
@@ -120,7 +122,8 @@ button.Toastify__close-button:hover {
 /*<<<<<<<<<<<<<<<<<<<<<<<<<Mobile>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 
 @media (max-width:860px) {
-    .form-container input,select{
+    .form-container input,
+    .form-container select{
         width: 350px;
     }
 
@@ -131,7 +134,8 @@ button.Toastify__close-button:hover {
         
     }
 
-    .form-container input, select{
+    .form-container input, 
+    .form-container select{
         height: 30px;
     }
 

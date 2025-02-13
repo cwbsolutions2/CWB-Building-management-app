@@ -4,6 +4,7 @@ import UserModification from './User Modification/UserModification';
 import SidebarMenu from './SidebarMenu/SidebarMenu';
 import Home from './Home/Home';
 import GateManagement from './GateManagement/GateManagement';
+import LocationManagement from './LocationManagement/Location';
 
 function App() {
 
@@ -19,10 +20,10 @@ function App() {
       <SidebarMenu />
 
       <Routes>
-        <Route path="/CWB-Parking-Application" element={<Navigate to="/home" />} /> 
         <Route path="/home" element={<Home/>}/>
         <Route path="/userModification" element={<UserModification />} />
         <Route path="/gateManagement" element={<GateManagement/>}/>
+        <Route path="/locationManagement" element={<LocationManagement/>} />
       </Routes>
     </Router>
   );

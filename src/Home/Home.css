@@ -1,34 +1,207 @@
+
+
+.anaheim {
+    font-family: "Anaheim", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.madimi-one-regular {
+    font-family: "Madimi One", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
 .homePageContainer {
     padding-top: 20%;
     font-size: 4em;
     letter-spacing: 1px;
     font-weight: 400;
+    margin-top: -250px;
 }
 
-.textGradient {
-    background: linear-gradient(135deg, rgb(10, 128, 238), rgb(255, 69, 212)); /* Add more colors as needed */
-    -webkit-background-clip: text; /* Clip the background to the text */
-    background-clip: text; /* Standard property */
-    color: transparent; /* Make the text transparent */
-    animation: moveGradient 3s linear infinite; /* Longer animation for smoother effect */
-    background-size: 200% 200%; /* Increase background size for movement */
+#landing-page-backdrop {
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    position: fixed; /* Ensures it covers the screen */
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
 
-/* Keyframes for moving the gradient */
-@keyframes moveGradient {
-    0% {
-        background-position: 0% 50%; /* Start position */
-    }
-    25% {
-        background-position: 50% 50%; /* Midway position */
-    }
-    100% {
-        background-position: 100% 50%; /* End position */
-    }
-    75% {
-        background-position: 50% 50%; /* Hold midway before returning */
-    }
+.login-signup-box-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 }
+
+.login-signup-box {
+    position: relative;
+    z-index: 10;
+    display: block;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.55);
+    padding: 50px;
+    width: 40%;
+    border-radius: 20px;
+    align-items: center;
+    color: #F5C022;
+    border: 2px solid rgba(245, 192, 34, 0.5);
+    box-shadow: 0 0 15px rgba(245, 192, 34, 0.5);
+
+}
+
+.logo {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 220px;
+    border-radius: 20px;
+    /* Curved corners */
+}
+
+.login-signup-box h2 {
+    margin-bottom: 5px;
+    line-height: 1.2;
+    font-family: "Anaheim", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 0.5em;
+    display: block;
+
+}
+
+.login-signup-box h1 {
+    margin-bottom: 15px;
+    font-size: 54px;
+    font-weight: bold;
+    color: black;
+    padding: 5px 20px;
+    display: inline-block;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    -webkit-text-stroke: 2px #F5C022;
+}
+
+.input-field {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 12px;
+    padding-right: 40px;
+    border: 2px solid #F5C022;
+    /* Yellow border */
+    outline: none;
+    background: black;
+    color: white;
+    border-radius: 5px;
+}
+
+.custom-icon-user, .custom-icon-lock {
+    color: #3498db;       /* Visible icon */
+    font-size: 1.5rem;
+    margin: 0;
+    background: transparent; /* Default behavior */
+}
+
+
+/* Labels */
+label {
+    display: block;
+    text-align: left;
+    color: white;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-family: "Madimi One", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Icons Inside Input Fields */
+.input-field i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+}
+
+/* Forgot Password & Remember Me */
+.options {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.forgot-password {
+    color: white;
+    text-decoration: underline;
+    font-family: "Anaheim", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-weight: lighter;
+}
+
+.remember-me input {
+    margin-right: 5px;
+    font-family: Arial, sans-serif;
+}
+
+/* Login Button */
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background: #F5C022;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 24px;
+    margin-top: 10%;
+    font-family: "Anaheim", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* Register Link */
+.register {
+    margin-top: 15px;
+    font-size: 14px;
+    color: white;
+    font-family: "Madimi One", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.register a {
+    color: #F5C022;
+    text-decoration: underline;
+}
+
+
+
+
 
 /* Responsive adjustments */
 @media (max-width: 865px) {
