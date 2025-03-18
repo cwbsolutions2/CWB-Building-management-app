@@ -12,7 +12,7 @@ const SignUP =() =>{
     const [firstName, SetFirstName] =useState('');
     const [secondName, SetLastName] =useState('');
     const [birthday, SetBirthday]=useState('');
-    const [country, SetCountry]=useState('');
+    //const [country, SetCountry]=useState('');
     const [phoneNumber, SetPhoneNumber]=useState('');
     const [email, SetEmail]= useState('');
     const [password, SetPassword]=useState('');
@@ -84,14 +84,14 @@ const SignUP =() =>{
         SetFirstName('');
         SetLastName('');
         SetBirthday('');
-        SetCountry('');
+        //SetCountry('');
         SetPhoneNumber('');
         SetEmail('');
         SetPassword('');
         SetConfirmPassword('');
         toast.success("Sign Up Successful!",{
             closeOnClick:true,
-            autoClose:2000,
+            autoClose:2500,
         })
 
     }
@@ -172,7 +172,7 @@ const SignUP =() =>{
                                 onChange={(e)=>SetPhoneNumber(e.target.value)}
                                 required/>
                         </div>
-
+                        {/* 
                         <label>Country</label>
                             <div className='input-field'>
                                 <CountryDropdown
@@ -182,7 +182,7 @@ const SignUP =() =>{
                                     onChange={(val) => SetCountry(val)}
                                     required
                                 />
-                            </div>
+                            </div>  */}
 
                         <label>Email</label>
                             <div className='input-field'>
@@ -224,7 +224,7 @@ const SignUP =() =>{
 
                             <div style={{ textAlign: 'left' }}>
                                 <span style={{ color: 'white', fontSize:"0.9em" }}>
-                                    * Password must contain 8-30 characters, a number, a lowercase, and an uppercase letter.
+                                    * Password must contain 8-30 characters, including a number, a lowercase, and an uppercase letter.
                                 </span>
                             </div>
 

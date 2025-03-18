@@ -184,6 +184,8 @@ const UserModification = () => {
       downloadLink.href = URL.createObjectURL(fileBlob);
       downloadLink.download = fileName;
 
+
+
       // Append the link to the document and trigger the download
       document.body.appendChild(downloadLink);  
       downloadLink.click();

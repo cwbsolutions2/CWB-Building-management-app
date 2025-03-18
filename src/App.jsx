@@ -6,6 +6,7 @@ import GateManagement from './GateManagement/GateManagement';
 import LocationManagement from './LocationManagement/Location';
 import SignUP from "./Home/Signup";
 import { Link } from "react-router-dom";
+import ForgotPassword from "./Home/Forgot Password";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/gateManagement" element={<GateManagement />} />
         <Route path="/locationManagement" element={<LocationManagement />} />
         <Route path="/signup" element={<SignUP/>} />
+        <Route path="/forgotPassword" element={<ForgotPassword/>}/>
       </Routes>
     </Router>
   );

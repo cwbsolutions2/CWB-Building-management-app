@@ -33,7 +33,7 @@ const Home =() =>{
                             </div>
 
                             <div class="options">
-                                <a href="#" class="forgot-password">Forgot password?</a>
+                                <Link  class="forgot-password" to={'/forgotPassword'}>Forgot password?</Link>
                                 {/*<div class="remember-me">
                                     <input type="checkbox" id="remember"/>
                                     <label for="remember">Remember me</label>
