@@ -5,6 +5,9 @@ import { CountryDropdown } from 'react-country-region-selector'
 import { useState } from 'react'
 import backdropLandingPage from '../assets/Backdrops/Landing page backdrop.jpeg'
 import { toast,ToastContainer } from 'react-toastify'
+import axios from "axios";
+import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 const SignUP =() =>{
 
@@ -18,6 +21,7 @@ const SignUP =() =>{
     const [password, SetPassword]=useState('');
     const [confirmPassword, SetConfirmPassword]=useState('');
     const [hasTypedConfirmPassword, setHasTypedConfirmPassword] = useState(false);
+    const navigate = useNavigate();
 
 
     const validatePassword = (password) => {
@@ -47,7 +51,7 @@ const SignUP =() =>{
             return 0;
     }
 
-    const handleSubmit = (e) =>{
+    const handleSubmit = async (e) =>{
         e.preventDefault();     {/* Prevent Page from Reloading*/}
 
         if(password!==confirmPassword){
@@ -80,6 +84,52 @@ const SignUP =() =>{
             return;
         }
 
+        try {
+            const response = await axios.post('http://47.129.53.168:5000/signup', {
+                email,
+                password,
+                title,
+                firstName,
+                secondName,
+                phoneNumber,
+                birthday,
+                   
+              });
+
+              Swal.fire({
+                title: "Sign Up Successful!",
+                text: "Please Proceed to Login",
+                icon: "success"
+            });
+
+            setTimeout(() => {
+                navigate('/home');
+            }, 3000);
+
+        } catch (error) {
+
+            if (error.response) {
+                // Error response from the backend (e.g., user already exists)
+                if (error.response.status === 400 && error.response.data.message === 'User already exists') {
+                    Swal.fire({
+                        title: "User Already Exist!",
+                        text: "Please use forgot password option",
+                        icon: "error"
+                    });
+                } else {
+                  toast.error('An error occurred. Please try again.');
+                }
+              } else {
+                // Network or other errors
+                Swal.fire({
+                    title: "Network Error!",
+                    icon: "error"
+                });
+              }
+   
+        }
+
+
 
         SetFirstName('');
         SetLastName('');
@@ -89,10 +139,7 @@ const SignUP =() =>{
         SetEmail('');
         SetPassword('');
         SetConfirmPassword('');
-        toast.success("Sign Up Successful!",{
-            closeOnClick:true,
-            autoClose:2500,
-        })
+
 
     }
 
